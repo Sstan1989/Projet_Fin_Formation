@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>L'agence du coin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Athiti&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Athiti&family=Merienda&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Zen+Maru+Gothic&display=swap" rel="stylesheet" />
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/0ff3ab6b3d.js" crossorigin="anonymous"></script>
+    <!--Fichier CSS-->
+    <link rel="stylesheet" href="public/CSS/style.css" type="text/css" />
+</head>
+
+<body id="theme">
+
+    <header>
+
+        <!-- Partie haute -->
+
+        <div class="headband__top">
+            <div class="container container__top">
+                <nav>
+                    <ul class="menu__list">
+                        <li class="menu__item menu__item--title">Thème :</li>
+                        <li class="menu__item">
+                            <button id="toggle-btn" class="dark-mode-toggle"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Partie principale -->
+
+        <div class="container container__header">
+            <div class="article__logo">
+                <a href="index.php">
+                    <img src="public/images/logo2.png" alt="logo agence" class="image__logo" />
+                </a>
+                <h1>L'AGENCE DU COIN</h1>
+            </div>
+        </div>
+
+        <!-- Partie basse : nav -->
+
+        <nav class="nav">
+            <div class="container container__menu">
+                <ul class="nav__list">
+                    <li class="nav__list--item"><a href="index.php?route=home">Accueil</a></li>
+                    <li class="nav__list--item"><a href="index.php?route=biens">Nos biens</li>
+                    <li class="nav__list--item"><a href="index.php?route=team">Notre équipe</li>
+                    <li class="nav__list--item"><a href="index.php?route=articles">Articles</li>
+                    <li class="nav__list--item"><a href="index.php?route=about">A propos</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class=container__searchBox>
+            <input type="text" id="search" placeholder="Rechercher un bien"> <!-- Notre champ de recherche avec un id-->
+        </div>
+        <div class="container__searchResults">
+            <div id="target"></div> <!-- Notre div avec un id dans laquelle nous afficherons le résultat -->
+        </div>
+        <!-- INCLURE ICI LE TEMPLATE POUR LE CENTRE DE MA PAGE   -->
+        <?php include $template ?>
+        <!-- FIN INCLUSION DU CENTRE DE MA PAGE   -->
+    </main>
+
+    <footer>
+        <!--Partie haute-->
+
+        <div class="container">
+            <section class="footer__top">
+                <article>
+                    <ul>
+                        <li>Horraires</li>
+                        <li>Lun-Jeu : 10h00 - 19h00</li>
+                        <li>Ven : 10h00 - 20h00</li>
+                        <li>Sam : 09h00 - 20h00</li>
+                        <li>Dim : sur RDV</li>
+                    </ul>
+                </article>
+
+                <article>
+                    <ul>
+                        <li>Contact</li>
+                        <li>666 Rue Monte au ciel</li>
+                        <li>44100 Nantes</li>
+                        <li>06 06 06 06 06</li>
+                        <li>02 02 02 02 02</li>
+                    </ul>
+                </article>
+
+                <article>
+                    <ul>
+                        <li>Réseaux sociaux</li>
+                        <li>
+                            <a href="https://fr-fr.facebook.com/"><i class="fa-brands fa-facebook-f facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/"><i class="fa-brands fa-twitter twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com"><i class="fa-brands fa-youtube youtube"></i></a>
+                        </li>
+                    </ul>
+                </article>
+            </section>
+        </div>
+
+        <!--Partie basse-->
+    </footer>
+    <script type="text/javascript" src="public/JS/carousel.js"></script>
+    <script type="text/javascript" src="public/JS/switch.js"></script>
+    <script type="text/javascript" src="public/JS/recherche.js"></script>
+
+</body>
+
+</html>

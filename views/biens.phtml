@@ -1,0 +1,14 @@
+<!-- Nos biens -->
+
+<section class="container__biens">
+
+    <?php foreach ($biens as $bien) : ?>
+        <article class="biens">
+            <h3><?= htmlspecialchars($bien['name']) ?></h3>
+            <img src="public/imagesBDD/<?= htmlspecialchars($bien['image']) ?>" alt="image des biens">
+            <p>Description : <?= htmlspecialchars($bien['description']) ?></p>
+            <p id="price">Prix de vente : <?= htmlspecialchars($bien['price']) ?><span id="italic">€ - Frais Agence Inclus </span></p>
+        </article>
+    <?php endforeach; ?>
+
+</section>

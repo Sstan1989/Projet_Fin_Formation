@@ -1,0 +1,15 @@
+<?php
+
+if (isset($errors) && count($errors) > 0) : ?>
+    <div class="container">
+        <img src="../public/imagesBDD/warning.jpg" alt="Triangle warning" id="img-warning" />
+    </div>
+    <div>
+        <ul>
+            <?php foreach ($errors as $error) : ?>
+                <li id="erreur"><?= $error; ?></li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+    
+<?php endif; ?>

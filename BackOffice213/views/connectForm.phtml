@@ -1,0 +1,16 @@
+<?php require_once('_errors.phtml'); ?>
+
+<form action="index.php?route=submitConnect" method="POST">
+    <legend>Connexion</legend>
+    <div class="form-group">
+        <label for="email">Merci de renseigner votre email</label>
+        <input type="text" name="email" class="form-control" placeholder="Email">
+
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Merci de renseigner votre mot de passe</label>
+        <input type="password" name="password" class="form-control" placeholder="Mot de passe">
+    </div>
+
+    <button type="submit" value="Valider" class="btn btn-success">Submit</button>
+</form>

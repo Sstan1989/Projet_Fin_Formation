@@ -1,0 +1,18 @@
+<!-- Articles -->
+
+<h2>Nos Articles</h2>
+<section class="container__articles">
+
+    <article class="articles">
+        <p class="article--intro">Vous retrouverez ici une sélection des questions qui nous sont régulièrement posées. En voici une petite sélection. En espérant que cela puisse vous aider dans vos démarches ! </p>
+    </article>
+
+    <?php foreach ($articles as $article) : ?>
+        <article class="articles">
+            <h5><?= htmlspecialchars($article['titre']) ?></h5>
+            <p><?= htmlspecialchars($article['contenu']) ?></p>
+            <hr class="line">
+        </article>
+    <?php endforeach; ?>
+
+</section>

@@ -1,0 +1,20 @@
+<!-- Search Biens -->
+
+<?php if ($numberOfBiens <= 1) :  ?>
+    <p class="found--biens"><?= $numberOfBiens ?> bien trouvé</p>
+<?php else : ?>
+    <p class="found--biens"><?= $numberOfBiens ?> biens trouvés</p>
+<?php endif; ?>
+
+<section class="container__biens--search">
+    <article class="biens">
+        <?php foreach ($biensLabels as $bien) : ?>
+            <a href="index.php?route=detailsArticleById&id&id=<?= $bien['name'] ?>">
+                <p>Nom du bien : <?= htmlspecialchars($bien['name']) ?> </p>
+                <img src="public/imagesBDD/<?= htmlspecialchars($bien['image']) ?>" alt="Image de bien">
+                <p>Description : <?= htmlspecialchars($bien['description']) ?></p>
+                <p id="price-bien">Prix de vente : <?= htmlspecialchars($bien['price']) ?> <span id="italic">€ - Frais Agence Inclus </span></p>
+                <br>
+            <?php endforeach; ?>
+    </article>
+</section>

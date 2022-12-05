@@ -1,0 +1,32 @@
+<?= $bien = ($_GET['id']) ?>
+
+<p><?= ($bien['name']) ?></p>
+<td><?= htmlspecialchars($bien['name']) ?></td>
+
+<section class="container admin">
+    <article class="row">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Prix</th>
+                    <th>Catégorie</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <?php foreach ($biens as $bien) : ?>
+                    <tr>
+                        <td><?= htmlspecialchars($bien['name']) ?></td>
+                        <td><?= htmlspecialchars($bien['description']) ?></td>
+                        <td><?= htmlspecialchars($bien['price']) ?></td>
+                        <td><?= htmlspecialchars($bien['category']) ?></td>
+                        <td><?= htmlspecialchars($bien['image']) ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </article>
+</section>

@@ -1,0 +1,43 @@
+<section class="container admin">
+    <article class="row">
+        <h1><strong>Liste des biens immobiliers </strong><a href="index.php?route=displayFormBien" class="btn btn-success btn-lg"> Ajouter</a></h1>
+
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Prix</th>
+                    <th>Catégorie</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <?php foreach ($biens as $bien) : ?>
+                    <tr>
+                        <td><?= htmlspecialchars($bien['name']) ?></td>
+                        <td><?= htmlspecialchars($bien['description']) ?></td>
+                        <td><?= htmlspecialchars($bien['price']) ?></td>
+                        <td><?= htmlspecialchars($bien['category']) ?></td>
+                        <td id="btn-biens">
+                            <a class="btn btn-secondary" href="index.php?route=see&id=<?= htmlspecialchars($bien['id']) ?>">Voir</a>
+                            <a class="btn btn-primary" href="index.php?route=update&id=<?= htmlspecialchars($bien['id']) ?>">Modifier</a>
+                            <form action="index.php?route=delete&id=<?= htmlspecialchars($bien['id']) ?>" method="POST">
+                                <input type="submit" value="supprimer" class="btn btn-danger">
+                            </form>
+                                
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </article>
+</section>
+
+<section class="container admin">
+    <article>
+        <p>Merci de cliquer <a href="index.php?route=accueilArticles">ici</a> pour la gestion des articles</p>
+        <p>Merci de cliquer <a href="index.php?route=user">ici</a> pour la gestion des utilisateurs</p>
+    </article>
+</section>

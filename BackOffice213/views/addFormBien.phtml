@@ -1,0 +1,47 @@
+<?php if (array_key_exists('id', $_GET) && $_GET['id'] >= 1) : ?>
+    <h1>Modification d'un bien</h1>
+    <form method="POST" enctype="multipart/form-data" action="index.php?route=submitFormBien&id=<?= htmlspecialchars($_GET['id']) ?>" class="formulaire">
+
+    <?php else : ?>
+        <h1>Ajout d'un bien !</h1>
+        <form method="POST" enctype="multipart/form-data" action="index.php?route=submitFormBien" class="formulaire">
+        <?php endif; ?>
+
+            <legend>Merci de renseigner les information suivantes :</legend>
+    
+            <?php require_once('_errors.phtml'); ?>
+            <?php require_once('_valids.phtml'); ?>
+    
+            <label for="name">Nom :</label>
+            <input type="text" name="name" id="name" value="<?= htmlspecialchars($addNewBien['addName']) ?>">
+    
+            <label for="description">Description :</label>
+            <textarea class="form-control" id="description" name="description" rows="5" cols="33"><?= htmlspecialchars($addNewBien['addDescription']) ?></textarea>
+    
+            <label for="price">Prix :</label>
+            <input type="number" id="price" name="price" value="<?= htmlspecialchars($addNewBien['addPrice']) ?>">
+    
+            <fieldset>
+                <label for="image">Image : </label>
+                <input type="file" accept="image/*" name="image" id="image">
+                <small class="form-text text-muted">Sélectionnez une image : Formats ['jpg', 'jpeg', 'gif', 'png'].</small></br>
+                <!-- <small class="form-text text-muted">Dimensions de l'image : [640px * 400px].</small> -->
+            </fieldset>
+    
+            <label for="category">Choisir une catégorie :</label>
+            <select name="category">
+                <option value="error">CATEGORIE</option>
+                <?php foreach ($categories as $cat) : ?>
+                    <option value="<?= htmlspecialchars($cat['id']) ?>" <?php if ($addNewBien['addCategory'] == $cat['name']) : ?> selected <?php endif; ?>><?= htmlspecialchars($cat['name']) ?></option>
+                <?php endforeach; ?>
+            </select>
+    
+            <?php if (array_key_exists('id', $_GET) && $_GET['id'] >= 1) : ?>
+                <input type="submit" value="Modifier" class="input-color" />
+            <?php else : ?>
+                <input type="submit" value="Valider" class="input-color" />
+            <?php endif; ?>
+
+        </form>
+
+        <button type="button" class="btn btn-warning"><a href=" index.php?route=accueil">Retour</a></button>

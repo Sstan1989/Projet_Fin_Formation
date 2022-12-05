@@ -1,0 +1,44 @@
+<section class="container admin">
+    <article class="row">
+        <?php if (isset($_SESSION['connected']) && $_SESSION['connected'] == true && $_SESSION['user']['id'] == '7') : ?>
+
+            <h1><strong>Liste des utilisateurs </strong><a href="index.php?route=displayFormUser" class="btn btn-success btn-lg"> Ajouter</a></h1>
+
+        <?php endif; ?>
+
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <?php foreach ($users as $user) : ?>
+                    <tr>
+                        <td><?= htmlspecialchars($user['nom']) ?></td>
+                        <td><?= htmlspecialchars($user['prenom']) ?></td>
+                        <td><?= htmlspecialchars($user['email']) ?></td>
+                        <td id="btn-articles">
+                            <a class="btn btn-secondary" href="index.php?route=seeUser&id=<?= htmlspecialchars($user['id']) ?>"> Voir</a>
+                            <a class="btn btn-primary" href="index.php?route=updateUser&id=<?= htmlspecialchars($user['id']) ?>"> Modifier</a>
+                             <form action="index.php?route=deleteUser&id=<?= htmlspecialchars($user['id']) ?>" method="POST">
+                                <input type="submit" value="supprimer" class="btn btn-danger">
+                            </form>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+
+            </tbody>
+        </table>
+    </article>
+</section>
+
+<section class="container admin">
+    <article>
+        <button type="button" class="btn btn-warning"><a href="index.php?route=accueil">Retour</a></button>
+    </article>
+</section>
